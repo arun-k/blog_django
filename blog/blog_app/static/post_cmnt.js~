@@ -1,0 +1,16 @@
+
+$(document).ready(function(){
+  $("#postcmnt").click(function(){
+    var name=document.getElementById("cmnt_name").value;
+    var body=document.getElementById("cmnt_body").value;
+    //alert(name,body);
+    var addr=String(window.location);
+   // var url=addr.slice(0,addr.length-1);
+    $.post(addr,{name:name,body:body},function(data,status){
+      if(status=='success'){
+        alert(data);
+        window.location.href=data;
+      }
+    });
+  });
+});

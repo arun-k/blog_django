@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Viewpost{% endblock %}
+
+{% block content %}
+  <a href="/" style="position:absolute;right:150px">Home</a>
+  {% for post in object_list %}
+    <h2><a href="/post/{{ post.id }}">{{ post.topic }}</a></h2>
+    <h6>on {{ post.created }}</h6>
+    {{ post.content|safe|linebreaks }}
+    <hr />
+  {% endfor %}
+{% endblock %}

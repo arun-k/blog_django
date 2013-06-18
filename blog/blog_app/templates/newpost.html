@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}New Post{% endblock %}
+
+{% block content %}   
+
+  <a id="gohome" href="/user/{{ username }}">Home</a>
+  <h2>New Post</h2>
+  <div id="date" style="position:absolute;right:200px;top:100px">
+    <label>Published on:</label><br />
+    <input id="created" type="date"></input>
+  </div>
+  <label>Topic</label><br />
+  <textarea id="topic" contenteditable="true" cols="100" rows="2" maxlength="100" autofocus="true"></textarea><br />
+  <label>Content</label><br />
+  <textarea id="content" contenteditable="true" spellcheck="true" cols="100" rows="25"></textarea><br />
+  <input id="postblog" type="button" value="Post" />
+
+  {% load static %}
+  <script src="{% static 'post.js' %}"></script>
+
+{% endblock %}
